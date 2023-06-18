@@ -1,0 +1,31 @@
+/* Arina Lazarenko */
+
+data;
+
+set Areas := area1 area2 area3;
+set Shifts := shift1 shift2 shift3;
+
+/*Minimalne liczby radiowozów dla kazdej zmiany i dzielinicy */
+param min_cars: shift1 shift2 shift3 :=
+		 area1 2 	  4  	 3 
+		 area2 3 	  6 	 5
+		 area3 5  	  7 	 6;
+
+/*Maksymalne liczby radiowozów dla kazdej zmiany i dzielinicy */
+param max_cars: shift1 shift2 shift3 :=
+		 area1 3 	  7  	 5 
+		 area2 5 	  7 	 10
+		 area3 8  	  12 	 10;
+
+
+/*potrzebna liczba radiowozów na dzielnice*/
+param needed_cars_for_area := area1 10
+		     	 area2 20
+		         area3 13;
+		         
+/*potrzebna liczba radiowozów dla zmiany*/
+param needed_cars_for_shift := shift1 10
+		     	 shift2 20
+		         shift3 18;
+	
+end;
